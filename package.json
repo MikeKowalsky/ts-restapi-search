@@ -1,0 +1,16 @@
+{
+  "name": "tsc-restapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "dev": "tsc-watch --onSuccess \"node ./dist/server.js\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tsc-watch": "^2.1.2",
+    "typescript": "^3.4.2"
+  }
+}
