@@ -1,7 +1,14 @@
-const sum = (a: number, b: number) => a + b;
-let totalSum: number = 0;
-console.log(typeof sum);
-setInterval(() => {
-  totalSum = sum(totalSum, 1);
-  console.log(totalSum);
-}, 1000);
+import http from "http";
+import express from "express";
+import { applyMiddleware } from "./utils";
+import middleware from "./middleware";
+
+const router = express();
+applyMiddleware(middleware, router);
+
+const { PORT = 3000 } = process.env;
+const server = http.createServer(router);
+
+server.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});
